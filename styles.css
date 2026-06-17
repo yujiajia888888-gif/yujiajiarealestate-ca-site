@@ -115,7 +115,7 @@ textarea {
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 22px;
   font-weight: 800;
 }
 
@@ -126,6 +126,41 @@ textarea {
 .site-nav a:hover,
 .site-nav a:focus-visible {
   opacity: 1;
+}
+
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px;
+  border: 1px solid currentColor;
+  border-radius: 8px;
+}
+
+.language-option {
+  min-width: 36px;
+  min-height: 32px;
+  padding: 6px 8px;
+  color: currentColor;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  font-size: 0.78rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.language-option:hover,
+.language-option:focus-visible,
+.language-option.is-active {
+  color: var(--ink);
+  background: var(--white);
+}
+
+.site-header.is-scrolled .language-option.is-active,
+.site-header.is-open .language-option.is-active {
+  color: var(--white);
+  background: var(--green);
 }
 
 .nav-toggle {
@@ -292,6 +327,7 @@ section[id] {
 
 .section-heading,
 .intro-grid,
+.listing-grid,
 .service-grid,
 .areas-section,
 .about-section,
@@ -328,6 +364,77 @@ section[id] {
 .intro-grid p {
   margin: 0;
   font-size: 1.06rem;
+}
+
+.listings-section {
+  background: var(--white);
+}
+
+.listing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.listing-card {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 14px 34px rgba(21, 32, 29, 0.08);
+}
+
+.listing-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--mist);
+}
+
+.listing-card-body {
+  display: grid;
+  gap: 12px;
+  padding: 22px;
+}
+
+.listing-meta {
+  display: grid;
+  gap: 8px;
+}
+
+.listing-meta span,
+.listing-specs {
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.listing-meta strong {
+  color: var(--green);
+  font-size: 1.32rem;
+  line-height: 1;
+}
+
+.listing-card h3 {
+  font-size: 1.06rem;
+  line-height: 1.18;
+}
+
+.listing-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.52;
+}
+
+.listing-link {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 4px;
+  color: var(--green);
+  font-weight: 900;
+  border-bottom: 2px solid var(--copper);
 }
 
 .section-light {
@@ -549,6 +656,20 @@ section.contact-section {
     border-radius: 8px;
   }
 
+  .language-switcher {
+    width: 100%;
+    color: var(--ink);
+  }
+
+  .language-option {
+    flex: 1;
+  }
+
+  .language-option.is-active {
+    color: var(--white);
+    background: var(--green);
+  }
+
   .site-nav a:hover,
   .site-nav a:focus-visible {
     background: var(--paper);
@@ -556,6 +677,7 @@ section.contact-section {
 
   .proof,
   .intro-grid,
+  .listing-grid,
   .service-grid,
   .areas-section,
   .about-section,
@@ -568,6 +690,10 @@ section.contact-section {
   }
 
   .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .listing-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -630,6 +756,10 @@ section.contact-section {
   }
 
   .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .listing-grid {
     grid-template-columns: 1fr;
   }
 

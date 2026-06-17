@@ -36,10 +36,7 @@
         },
         "areaServed": ["Montreal", "South Shore", "Laval", "Greater Montreal"],
         "knowsLanguage": ["English", "French", "Mandarin Chinese"],
-        "sameAs": [
-          "https://www.instagram.com/yujiajia_realtor/",
-          "https://registre.oaciq.com/en/find-broker/454F7E53"
-        ]
+        "sameAs": ["https://www.instagram.com/yujiajia_realtor/"]
       }
     </script>
   </head>
@@ -49,7 +46,7 @@
         <span class="brand-mark" aria-hidden="true">JY</span>
         <span>
           <strong>Jiajia Yu</strong>
-          <small>Real Estate Broker</small>
+          <small data-i18n="brand.role">Real Estate Broker</small>
         </span>
       </a>
 
@@ -57,29 +54,35 @@
         <span></span>
         <span></span>
         <span></span>
-        <span class="sr-only">Open navigation</span>
+        <span class="sr-only" data-i18n="nav.open">Open navigation</span>
       </button>
 
       <nav class="site-nav" id="site-nav" data-nav>
-        <a href="#services">Services</a>
-        <a href="#areas">Areas</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="#listings" data-i18n="nav.listings">Listings</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#areas" data-i18n="nav.areas">Areas</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <div class="language-switcher" role="group" aria-label="Language selector">
+          <button class="language-option is-active" type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button class="language-option" type="button" data-lang="fr" aria-pressed="false">FR</button>
+          <button class="language-option" type="button" data-lang="zh" aria-pressed="false">中文</button>
+        </div>
       </nav>
     </header>
 
     <main>
       <section class="hero" id="home">
         <div class="hero-copy">
-          <p class="eyebrow">Residential and commercial real estate broker</p>
-          <h1>Move with strategy in Greater Montreal.</h1>
-          <p>
+          <p class="eyebrow" data-i18n="hero.eyebrow">Residential and commercial real estate broker</p>
+          <h1 data-i18n="hero.title">Move with strategy in Greater Montreal.</h1>
+          <p data-i18n="hero.copy">
             Jiajia Yu helps buyers, sellers, and investors make clear real estate decisions across Montreal, the South
             Shore, Laval, and surrounding areas.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#contact">Book a Consultation</a>
-            <a class="button button-secondary" href="tel:+15145571514">Call 514-557-1514</a>
+            <a class="button button-primary" href="#contact" data-i18n="hero.cta">Book a Consultation</a>
+            <a class="button button-secondary" href="tel:+15145571514" data-i18n="hero.call">Call 514-557-1514</a>
           </div>
         </div>
       </section>
@@ -87,65 +90,227 @@
       <section class="proof" aria-label="Professional highlights">
         <article>
           <strong>OACIQ</strong>
-          <span>Verified broker record</span>
+          <span data-i18n="proof.oaciq">Verified broker record</span>
         </article>
         <article>
           <strong>3</strong>
-          <span>Languages: English, French, Mandarin</span>
+          <span data-i18n="proof.languages">Languages: English, French, Mandarin</span>
         </article>
         <article>
           <strong>2</strong>
-          <span>Residential and commercial guidance</span>
+          <span data-i18n="proof.guidance">Residential and commercial guidance</span>
         </article>
       </section>
 
       <section class="section intro-section">
         <div class="section-heading">
-          <p class="eyebrow">Clear guidance</p>
-          <h2>Built for serious decisions, not pressure.</h2>
+          <p class="eyebrow" data-i18n="intro.eyebrow">Clear guidance</p>
+          <h2 data-i18n="intro.title">Built for serious decisions, not pressure.</h2>
         </div>
         <div class="intro-grid">
-          <p>
+          <p data-i18n="intro.copy1">
             Real estate decisions are easier when the process is organized. Jiajia brings structure, discipline, and
             honest advice to each step, from search strategy and pricing context to offer terms and negotiation.
           </p>
-          <p>
+          <p data-i18n="intro.copy2">
             Whether you are buying your first home, preparing to sell, reviewing a commercial opportunity, or comparing
             investment options, you get direct communication and a practical plan.
           </p>
         </div>
       </section>
 
+      <section class="section listings-section" id="listings">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="listings.eyebrow">Featured listings</p>
+          <h2 data-i18n="listings.title">Current properties represented by Jiajia.</h2>
+          <p data-i18n="listings.copy">
+            Active listings verified on Centris. Availability and prices can change, so open the Centris listing for
+            the latest details.
+          </p>
+        </div>
+        <div class="listing-grid">
+          <article class="listing-card">
+            <img
+              src="https://mspublic.centris.ca/media.ashx?id=ADDD250DE8A6CAEDDDDDDDDDDB&amp;t=pi&amp;w=640&amp;h=480&amp;sm=c"
+              alt="Business for sale at 8630 Rue Sherbrooke Est"
+            />
+            <div class="listing-card-body">
+              <div class="listing-meta">
+                <span data-i18n="listing.businessSale">Business for sale</span>
+                <strong>$98,000 +GST/QST</strong>
+              </div>
+              <h3>8630, Rue Sherbrooke Est</h3>
+              <p>Montr&eacute;al (Mercier/Hochelaga-Maisonneuve)</p>
+              <p class="listing-specs" data-i18n="listing.restaurant">Restaurant</p>
+              <a
+                class="listing-link"
+                href="https://www.centris.ca/en/businesses~for-sale~montreal-mercier-hochelaga-maisonneuve/16451247"
+                target="_blank"
+                rel="noopener"
+                data-i18n="listing.view"
+              >
+                View on Centris
+              </a>
+            </div>
+          </article>
+
+          <article class="listing-card">
+            <img
+              src="https://mspublic.centris.ca/media.ashx?id=ADDD250DE32ED8CDDDDDDDDDD0&amp;t=pi&amp;w=640&amp;h=480&amp;sm=c"
+              alt="Commercial building for sale at 8630 - 8632 Rue Sherbrooke Est"
+            />
+            <div class="listing-card-body">
+              <div class="listing-meta">
+                <span data-i18n="listing.commercialSale">Commercial building for sale</span>
+                <strong>$1,199,000 +GST/QST</strong>
+              </div>
+              <h3>8630 - 8632, Rue Sherbrooke Est</h3>
+              <p>Montr&eacute;al (Mercier/Hochelaga-Maisonneuve)</p>
+              <p class="listing-specs" data-i18n="listing.commercialResidential">Commercial, Residential</p>
+              <a
+                class="listing-link"
+                href="https://www.centris.ca/en/commercial-buildings~for-sale~montreal-mercier-hochelaga-maisonneuve/24566260"
+                target="_blank"
+                rel="noopener"
+                data-i18n="listing.view"
+              >
+                View on Centris
+              </a>
+            </div>
+          </article>
+
+          <article class="listing-card">
+            <img
+              src="https://mspublic.centris.ca/media.ashx?id=ADDD250DADE3610DDDDDDDDDDC&amp;t=pi&amp;w=640&amp;h=480&amp;sm=c"
+              alt="Condo for sale at 1518 Rue Sherbrooke Ouest apt 1628"
+            />
+            <div class="listing-card-body">
+              <div class="listing-meta">
+                <span data-i18n="listing.condoSale">Condo for sale</span>
+                <strong>$460,000</strong>
+              </div>
+              <h3>1518, Rue Sherbrooke Ouest, apt. 1628</h3>
+              <p>Montr&eacute;al (Ville-Marie)</p>
+              <p class="listing-specs" data-i18n="listing.oneBedOneBath">1 bedroom &middot; 1 bathroom</p>
+              <a
+                class="listing-link"
+                href="https://www.centris.ca/en/condos~for-sale~montreal-ville-marie/15377722"
+                target="_blank"
+                rel="noopener"
+                data-i18n="listing.view"
+              >
+                View on Centris
+              </a>
+            </div>
+          </article>
+
+          <article class="listing-card">
+            <img
+              src="https://mspublic.centris.ca/media.ashx?id=ADDD250DA1E3409DDDDDDDDDD4&amp;t=pi&amp;w=640&amp;h=480&amp;sm=c"
+              alt="Condo apartment for rent at 98 Rue Charlotte apt 761"
+            />
+            <div class="listing-card-body">
+              <div class="listing-meta">
+                <span data-i18n="listing.apartmentRent">Condo / Apartment for rent</span>
+                <strong>$1,450 /month</strong>
+              </div>
+              <h3>98, Rue Charlotte, apt. 761</h3>
+              <p>Montr&eacute;al (Ville-Marie)</p>
+              <p class="listing-specs" data-i18n="listing.oneBedOneBath">1 bedroom &middot; 1 bathroom</p>
+              <a
+                class="listing-link"
+                href="https://www.centris.ca/en/condos-apartments~for-rent~montreal-ville-marie/15606293"
+                target="_blank"
+                rel="noopener"
+                data-i18n="listing.view"
+              >
+                View on Centris
+              </a>
+            </div>
+          </article>
+
+          <article class="listing-card">
+            <img
+              src="https://mspublic.centris.ca/media.ashx?id=ADDD250DADE5C8FDDDDDDDDDDE&amp;t=pi&amp;w=640&amp;h=480&amp;sm=c"
+              alt="Condo apartment for rent at 1518 Rue Sherbrooke Ouest apt 1628"
+            />
+            <div class="listing-card-body">
+              <div class="listing-meta">
+                <span data-i18n="listing.apartmentRent">Condo / Apartment for rent</span>
+                <strong>$1,550 /month</strong>
+              </div>
+              <h3>1518, Rue Sherbrooke Ouest, apt. 1628</h3>
+              <p>Montr&eacute;al (Ville-Marie)</p>
+              <p class="listing-specs" data-i18n="listing.oneBedOneBath">1 bedroom &middot; 1 bathroom</p>
+              <a
+                class="listing-link"
+                href="https://www.centris.ca/en/condos-apartments~for-rent~montreal-ville-marie/18454919"
+                target="_blank"
+                rel="noopener"
+                data-i18n="listing.view"
+              >
+                View on Centris
+              </a>
+            </div>
+          </article>
+
+          <article class="listing-card">
+            <img
+              src="https://mspublic.centris.ca/media.ashx?id=ADDD250DA129836DDDDDDDDDDD&amp;t=pi&amp;w=640&amp;h=480&amp;sm=c"
+              alt="Condominium house for rent at 417 Rue des Marronniers"
+            />
+            <div class="listing-card-body">
+              <div class="listing-meta">
+                <span data-i18n="listing.houseRent">Condominium house for rent</span>
+                <strong>$3,200 /month</strong>
+              </div>
+              <h3>417, Rue des Marronniers</h3>
+              <p>Candiac</p>
+              <p class="listing-specs" data-i18n="listing.threeBedThreeBath">3 bedrooms &middot; 3 bathrooms</p>
+              <a
+                class="listing-link"
+                href="https://www.centris.ca/en/condominium-houses~for-rent~candiac/23530380"
+                target="_blank"
+                rel="noopener"
+                data-i18n="listing.view"
+              >
+                View on Centris
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section class="section section-light" id="services">
         <div class="section-heading">
-          <p class="eyebrow">Services</p>
-          <h2>Support for buyers, sellers, and investors.</h2>
+          <p class="eyebrow" data-i18n="services.eyebrow">Services</p>
+          <h2 data-i18n="services.title">Support for buyers, sellers, and investors.</h2>
         </div>
         <div class="service-grid">
           <article class="service-card">
-            <h3>Buyer Representation</h3>
-            <p>Define criteria, compare properties, understand value, prepare offers, and move through closing.</p>
+            <h3 data-i18n="services.buyers.title">Buyer Representation</h3>
+            <p data-i18n="services.buyers.copy">Define criteria, compare properties, understand value, prepare offers, and move through closing.</p>
           </article>
           <article class="service-card">
-            <h3>Seller Strategy</h3>
-            <p>Prepare the property, position the price, plan the launch, qualify buyers, and negotiate carefully.</p>
+            <h3 data-i18n="services.sellers.title">Seller Strategy</h3>
+            <p data-i18n="services.sellers.copy">Prepare the property, position the price, plan the launch, qualify buyers, and negotiate carefully.</p>
           </article>
           <article class="service-card">
-            <h3>Commercial Real Estate</h3>
-            <p>Review location, property use, numbers, risk, and long-term fit before moving forward.</p>
+            <h3 data-i18n="services.commercial.title">Commercial Real Estate</h3>
+            <p data-i18n="services.commercial.copy">Review location, property use, numbers, risk, and long-term fit before moving forward.</p>
           </article>
           <article class="service-card">
-            <h3>Investor Guidance</h3>
-            <p>Evaluate opportunities with discipline, clear assumptions, and practical market context.</p>
+            <h3 data-i18n="services.investors.title">Investor Guidance</h3>
+            <p data-i18n="services.investors.copy">Evaluate opportunities with discipline, clear assumptions, and practical market context.</p>
           </article>
         </div>
       </section>
 
       <section class="section areas-section" id="areas">
         <div class="areas-copy">
-          <p class="eyebrow">Service areas</p>
-          <h2>Montreal, South Shore, Laval.</h2>
-          <p>
+          <p class="eyebrow" data-i18n="areas.eyebrow">Service areas</p>
+          <h2 data-i18n="areas.title">Montreal, South Shore, Laval.</h2>
+          <p data-i18n="areas.copy">
             Jiajia works across Greater Montreal and helps clients compare neighborhoods, property types, lifestyle
             needs, commute patterns, and resale signals before making a move.
           </p>
@@ -154,48 +319,47 @@
           <article>
             <span>01</span>
             <h3>Montreal</h3>
-            <p>Urban condos, residential homes, and commercial opportunities.</p>
+            <p data-i18n="areas.montreal">Urban condos, residential homes, and commercial opportunities.</p>
           </article>
           <article>
             <span>02</span>
             <h3>South Shore</h3>
-            <p>Family moves, lifestyle planning, and long-term value.</p>
+            <p data-i18n="areas.southShore">Family moves, lifestyle planning, and long-term value.</p>
           </article>
           <article>
             <span>03</span>
             <h3>Laval</h3>
-            <p>Residential and commercial guidance in a growing market.</p>
+            <p data-i18n="areas.laval">Residential and commercial guidance in a growing market.</p>
           </article>
         </div>
       </section>
 
       <section class="section about-section" id="about">
         <div>
-          <p class="eyebrow">About Jiajia</p>
-          <h2>Strategy, honesty, and discipline.</h2>
-          <p>
+          <p class="eyebrow" data-i18n="about.eyebrow">About Jiajia</p>
+          <h2 data-i18n="about.title">Strategy, honesty, and discipline.</h2>
+          <p data-i18n="about.copy1">
             Jiajia Yu is a residential and commercial real estate broker based in Greater Montreal. Fluent in English,
             French, and Mandarin Chinese, he helps buyers, sellers, and investors understand the market and make
             confident decisions.
           </p>
-          <p>
+          <p data-i18n="about.copy2">
             With a background in real estate and personal training, Jiajia brings structure, responsibility, and
             client-focused service to every relationship.
           </p>
         </div>
         <aside class="profile-panel">
-          <h3>Professional Details</h3>
+          <h3 data-i18n="about.details">Professional Details</h3>
           <p>Royal LePage du Quartier</p>
           <p>6971-C, C&ocirc;te-de-Liesse, St-Laurent, QC H4T 1Z3</p>
-          <a href="https://registre.oaciq.com/en/find-broker/454F7E53" target="_blank" rel="noopener">View OACIQ record</a>
         </aside>
       </section>
 
       <section class="section contact-section" id="contact">
         <div class="contact-copy">
-          <p class="eyebrow">Contact</p>
-          <h2>Ready to talk about your next move?</h2>
-          <p>
+          <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+          <h2 data-i18n="contact.title">Ready to talk about your next move?</h2>
+          <p data-i18n="contact.copy">
             Send a quick note and your email app will open with the details ready to send to Jiajia.
           </p>
           <div class="contact-links">
@@ -208,37 +372,37 @@
 
         <form class="contact-form" data-contact-form>
           <label>
-            Name
+            <span data-i18n="form.name">Name</span>
             <input type="text" name="name" autocomplete="name" required />
           </label>
           <label>
-            Email
+            <span data-i18n="form.email">Email</span>
             <input type="email" name="email" autocomplete="email" required />
           </label>
           <label>
-            Interest
+            <span data-i18n="form.interest">Interest</span>
             <select name="interest" required>
-              <option value="">Choose one</option>
-              <option>Buying a home</option>
-              <option>Selling a property</option>
-              <option>Commercial real estate</option>
-              <option>Investment property</option>
-              <option>Market valuation</option>
+              <option value="" data-i18n="form.choose">Choose one</option>
+              <option data-i18n="form.buying">Buying a home</option>
+              <option data-i18n="form.selling">Selling a property</option>
+              <option data-i18n="form.commercial">Commercial real estate</option>
+              <option data-i18n="form.investment">Investment property</option>
+              <option data-i18n="form.valuation">Market valuation</option>
             </select>
           </label>
           <label>
-            Message
-            <textarea name="message" rows="5" placeholder="Tell me what you are planning."></textarea>
+            <span data-i18n="form.message">Message</span>
+            <textarea name="message" rows="5" placeholder="Tell me what you are planning." data-i18n-placeholder="form.placeholder"></textarea>
           </label>
-          <button class="button button-primary" type="submit">Open Email Draft</button>
+          <button class="button button-primary" type="submit" data-i18n="form.submit">Open Email Draft</button>
           <p class="form-status" role="status" aria-live="polite" data-form-status></p>
         </form>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>&copy; <span data-year></span> Jiajia Yu Real Estate. All rights reserved.</p>
-      <p>Residential and Commercial Real Estate Broker &middot; Greater Montreal</p>
+      <p>&copy; <span data-year></span> <span data-i18n="footer.copyright">Jiajia Yu Real Estate. All rights reserved.</span></p>
+      <p data-i18n="footer.tagline">Residential and Commercial Real Estate Broker &middot; Greater Montreal</p>
     </footer>
 
     <script src="script.js"></script>
