@@ -34,9 +34,9 @@ const translations = {
     "intro.copy2":
       "Whether you are buying your first home, preparing to sell, reviewing a commercial opportunity, or comparing investment options, you get direct communication and a practical plan.",
     "listings.eyebrow": "Featured listings",
-    "listings.title": "Current properties represented by Jiajia.",
+    "listings.title": "Current eXp Québec listings represented by Jiajia.",
     "listings.copy":
-      "Active listings verified on Centris. Availability and prices can change, so open the Centris listing for the latest details.",
+      "Active listings are linked through Centris. Availability and prices can change, so open the Centris listing for the latest details.",
     "listing.businessSale": "Business for sale",
     "listing.restaurant": "Restaurant",
     "listing.commercialSale": "Commercial building for sale",
@@ -92,7 +92,6 @@ const translations = {
       "With a background in real estate and personal training, Jiajia brings structure, responsibility, and client-focused service to every relationship.",
     "about.details": "Professional Details",
     "about.brokerageLabel": "Brokerage",
-    "about.officeLabel": "Office",
     "contact.eyebrow": "Contact",
     "contact.title": "Ready to talk about your next move?",
     "contact.copy": "Send a quick note and your email app will open with the details ready to send to Jiajia.",
@@ -141,9 +140,9 @@ const translations = {
     "intro.copy2":
       "Que vous achetiez votre première propriété, prépariez une vente, analysiez une occasion commerciale ou compariez des options d’investissement, vous recevez une communication directe et un plan pratique.",
     "listings.eyebrow": "Inscriptions en vedette",
-    "listings.title": "Propriétés actuellement représentées par Jiajia.",
+    "listings.title": "Inscriptions eXp Québec actuellement représentées par Jiajia.",
     "listings.copy":
-      "Inscriptions actives vérifiées sur Centris. La disponibilité et les prix peuvent changer; ouvrez l’inscription Centris pour consulter les détails les plus récents.",
+      "Les inscriptions actives sont liées à Centris. La disponibilité et les prix peuvent changer; ouvrez l’inscription Centris pour consulter les détails les plus récents.",
     "listing.businessSale": "Commerce à vendre",
     "listing.restaurant": "Restaurant",
     "listing.commercialSale": "Bâtiment commercial à vendre",
@@ -199,7 +198,6 @@ const translations = {
       "Avec une expérience en immobilier et en entraînement personnel, Jiajia apporte structure, responsabilité et service axé sur le client à chaque relation.",
     "about.details": "Détails professionnels",
     "about.brokerageLabel": "Agence",
-    "about.officeLabel": "Bureau",
     "contact.eyebrow": "Contact",
     "contact.title": "Prêt à discuter de votre prochain projet?",
     "contact.copy": "Envoyez une courte note et votre application courriel ouvrira un message prêt à envoyer à Jiajia.",
@@ -248,9 +246,9 @@ const translations = {
     "intro.copy2":
       "无论您是购买第一套房、准备出售、评估商业机会，还是比较投资选择，您都会得到直接沟通和实用计划。",
     "listings.eyebrow": "精选房源",
-    "listings.title": "Jiajia 当前代理的房源。",
+    "listings.title": "Jiajia 当前在 eXp Québec 代理的房源。",
     "listings.copy":
-      "以下为 Centris 上验证的活跃房源。房源状态和价格可能变化，请打开 Centris 页面查看最新详情。",
+      "当前房源通过 Centris 链接。房源状态和价格可能会变化，请打开 Centris 查看最新详情。",
     "listing.businessSale": "生意出售",
     "listing.restaurant": "餐厅",
     "listing.commercialSale": "商业楼宇出售",
@@ -305,7 +303,6 @@ const translations = {
       "凭借房地产和私人训练背景，Jiajia 为每段客户关系带来结构、责任感和以客户为中心的服务。",
     "about.details": "专业信息",
     "about.brokerageLabel": "所属地产公司",
-    "about.officeLabel": "办公室",
     "contact.eyebrow": "联系",
     "contact.title": "准备聊聊您的下一步计划吗？",
     "contact.copy": "发送一条简短信息，您的邮件应用会自动打开一封准备发送给 Jiajia 的草稿。",
