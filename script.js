@@ -5,10 +5,114 @@ const contactForm = document.querySelector("[data-contact-form]");
 const formStatus = document.querySelector("[data-form-status]");
 const year = document.querySelector("[data-year]");
 const languageButtons = document.querySelectorAll("[data-lang]");
+const agencyListingsContainer = document.querySelector("[data-agency-listings]");
+const listingsUpdated = document.querySelector("[data-listings-updated]");
+
+const fallbackAgencyListings = [
+  {
+    id: "17932864",
+    status: "For Sale",
+    price: "$390,000",
+    address: "2923 Rue des Galets",
+    location: "Carignan, Montérégie",
+    beds: 2,
+    bathrooms: 1,
+    image: "https://realestate.marketingwebsites.ca/property-images/17932864/17932864-01.jpg",
+    url: "https://expquebec.com/en/properties/mls/17932864",
+  },
+  {
+    id: "27678671",
+    status: "For Sale",
+    price: "$635,000",
+    address: "882 Rue de la Falaise",
+    location: "Pincourt, Montérégie",
+    beds: 3,
+    bathrooms: 2,
+    image: "https://realestate.marketingwebsites.ca/property-images/27678671/27678671-01.jpg",
+    url: "https://expquebec.com/en/properties/mls/27678671",
+  },
+  {
+    id: "19644170",
+    status: "For Sale",
+    price: "$449,900",
+    address: "#11 270 Boul. d'Europe",
+    location: "Aylmer, Outaouais",
+    beds: 3,
+    bathrooms: 1,
+    image: "https://realestate.marketingwebsites.ca/property-images/19644170/19644170-01.jpg",
+    url: "https://expquebec.com/en/properties/mls/19644170",
+  },
+  {
+    id: "15996073",
+    status: "For Sale",
+    price: "$349,000",
+    address: "1180 Rue Blanchard",
+    location: "Fleurimont, Estrie",
+    beds: 4,
+    bathrooms: 2,
+    image: "https://realestate.marketingwebsites.ca/property-images/15996073/15996073-01.jpg",
+    url: "https://expquebec.com/en/properties/mls/15996073",
+  },
+  {
+    id: "26078835",
+    status: "For Sale",
+    price: "$585,000",
+    address: "640 Rue Ste-Julie",
+    location: "Brompton/Rock Forest/Saint-Élie/Deauville, Estrie",
+    beds: 4,
+    bathrooms: 2,
+    image: "https://realestate.marketingwebsites.ca/property-images/26078835/26078835-01.jpg",
+    url: "https://expquebec.com/en/properties/mls/26078835",
+  },
+  {
+    id: "25447426",
+    status: "For Sale",
+    price: "$849,000",
+    address: "#2802 1188 Av. Union",
+    location: "Ville-Marie, Montréal",
+    beds: 2,
+    bathrooms: 2,
+    image: "https://realestate.marketingwebsites.ca/property-images/25447426/25447426-01.jpg",
+    url: "https://expquebec.com/en/properties/mls/25447426",
+  },
+  {
+    id: "26984653",
+    status: "For Sale",
+    price: "$424,900",
+    address: "536 Rue Matte",
+    location: "Buckingham, Outaouais",
+    beds: 4,
+    bathrooms: 1,
+    image: "https://realestate.marketingwebsites.ca/property-images/26984653/26984653-01.jpg",
+    url: "https://expquebec.com/en/properties/mls/26984653",
+  },
+  {
+    id: "15121737",
+    status: "For Sale",
+    price: "$925,000",
+    address: "19 Rue Parklane",
+    location: "Dollard-des-Ormeaux, Montréal",
+    beds: 4,
+    bathrooms: 2,
+    image: "https://realestate.marketingwebsites.ca/property-images/15121737/15121737-01.jpg",
+    url: "https://expquebec.com/en/properties/mls/15121737",
+  },
+  {
+    id: "23782953",
+    status: "For Sale",
+    price: "$629,900",
+    address: "4739 Rue Viau",
+    location: "Brompton/Rock Forest/Saint-Élie/Deauville, Estrie",
+    beds: 4,
+    bathrooms: 2,
+    image: "https://realestate.marketingwebsites.ca/property-images/23782953/23782953-01.jpg",
+    url: "https://expquebec.com/en/properties/mls/23782953",
+  },
+];
 
 const translations = {
   en: {
-    "metadata.title": "Jiajia Yu Real Estate | yuajiajiarealestate.ca",
+    "metadata.title": "Jiajia Yu Real Estate | yujiajiarealestate.ca",
     "metadata.description":
       "Jiajia Yu is a residential and commercial real estate broker serving Montreal, the South Shore, Laval, and Greater Montreal in English, French, and Mandarin Chinese.",
     "brand.role": "Real Estate Broker",
@@ -34,19 +138,36 @@ const translations = {
     "intro.copy2":
       "Whether you are buying your first home, preparing to sell, reviewing a commercial opportunity, or comparing investment options, you get direct communication and a practical plan.",
     "listings.eyebrow": "Featured listings",
-    "listings.title": "Current eXp Québec listings represented by Jiajia.",
+    "listings.title": "Featured listings and eXp Québec agency inventory.",
     "listings.copy":
-      "Active listings are linked through Centris. Availability and prices can change, so open the Centris listing for the latest details.",
+      "Review Jiajia's featured listing links below, then open his eXp Québec profile for the full agency inventory. Availability and prices can change, so use the source listing pages for the latest details.",
+    "listings.loading": "Loading current eXp Québec listings...",
+    "listings.error": "Current listings could not be loaded. Please open the eXp Québec profile for the latest inventory.",
+    "listings.updated": "Auto-updated from eXp Québec",
     "listing.businessSale": "Business for sale",
     "listing.restaurant": "Restaurant",
     "listing.commercialSale": "Commercial building for sale",
     "listing.commercialResidential": "Commercial, Residential",
     "listing.condoSale": "Condo for sale",
     "listing.oneBedOneBath": "1 bedroom · 1 bathroom",
+    "listing.twoBedOneBath": "2 bedrooms · 1 bathroom",
+    "listing.threeBedOneBath": "3 bedrooms · 1 bathroom",
+    "listing.threeBedTwoBath": "3 bedrooms · 2 bathrooms",
     "listing.apartmentRent": "Condo / Apartment for rent",
     "listing.houseRent": "Condominium house for rent",
     "listing.threeBedThreeBath": "3 bedrooms · 3 bathrooms",
+    "listing.expAgency": "eXp agency listing",
+    "listing.bedroomSingular": "bedroom",
+    "listing.bedroomPlural": "bedrooms",
+    "listing.bathroomSingular": "bathroom",
+    "listing.bathroomPlural": "bathrooms",
     "listing.view": "View on Centris",
+    "exp.eyebrow": "eXp Québec agency",
+    "exp.title": "More inventory through Jiajia's eXp Québec broker profile.",
+    "exp.copy":
+      "Jiajia's eXp Québec profile shows Yu Jiajia Immobilier Inc., his residential and commercial broker profile, and the agency listing feed. Open the eXp source page for the newest inventory and availability.",
+    "exp.viewProfile": "View eXp profile & listings",
+    "exp.viewListing": "View on eXp Québec",
     "services.eyebrow": "Services",
     "services.title": "Support for buyers, sellers, and investors.",
     "services.buyers.title": "Buyer Representation",
@@ -114,7 +235,7 @@ const translations = {
     "footer.tagline": "Residential and Commercial Real Estate Broker · Greater Montreal",
   },
   fr: {
-    "metadata.title": "Jiajia Yu Immobilier | yuajiajiarealestate.ca",
+    "metadata.title": "Jiajia Yu Immobilier | yujiajiarealestate.ca",
     "metadata.description":
       "Jiajia Yu est courtier immobilier résidentiel et commercial dans le Grand Montréal, au service de Montréal, de la Rive-Sud, de Laval et des environs en anglais, français et mandarin.",
     "brand.role": "Courtier immobilier",
@@ -140,19 +261,36 @@ const translations = {
     "intro.copy2":
       "Que vous achetiez votre première propriété, prépariez une vente, analysiez une occasion commerciale ou compariez des options d’investissement, vous recevez une communication directe et un plan pratique.",
     "listings.eyebrow": "Inscriptions en vedette",
-    "listings.title": "Inscriptions eXp Québec actuellement représentées par Jiajia.",
+    "listings.title": "Inscriptions en vedette et inventaire de l'agence eXp Québec.",
     "listings.copy":
-      "Les inscriptions actives sont liées à Centris. La disponibilité et les prix peuvent changer; ouvrez l’inscription Centris pour consulter les détails les plus récents.",
+      "Consultez les liens d'inscriptions en vedette de Jiajia, puis ouvrez son profil eXp Québec pour voir l'inventaire complet de l'agence. La disponibilité et les prix peuvent changer; utilisez les pages sources pour les détails les plus récents.",
+    "listings.loading": "Chargement des inscriptions eXp Québec actuelles...",
+    "listings.error": "Les inscriptions actuelles n'ont pas pu être chargées. Ouvrez le profil eXp Québec pour l'inventaire le plus récent.",
+    "listings.updated": "Mis à jour automatiquement depuis eXp Québec",
     "listing.businessSale": "Commerce à vendre",
     "listing.restaurant": "Restaurant",
     "listing.commercialSale": "Bâtiment commercial à vendre",
     "listing.commercialResidential": "Commercial, résidentiel",
     "listing.condoSale": "Condo à vendre",
     "listing.oneBedOneBath": "1 chambre · 1 salle de bain",
+    "listing.twoBedOneBath": "2 chambres · 1 salle de bain",
+    "listing.threeBedOneBath": "3 chambres · 1 salle de bain",
+    "listing.threeBedTwoBath": "3 chambres · 2 salles de bain",
     "listing.apartmentRent": "Condo / Appartement à louer",
     "listing.houseRent": "Maison en copropriété à louer",
     "listing.threeBedThreeBath": "3 chambres · 3 salles de bain",
+    "listing.expAgency": "Inscription de l'agence eXp",
+    "listing.bedroomSingular": "chambre",
+    "listing.bedroomPlural": "chambres",
+    "listing.bathroomSingular": "salle de bain",
+    "listing.bathroomPlural": "salles de bain",
     "listing.view": "Voir sur Centris",
+    "exp.eyebrow": "Agence eXp Québec",
+    "exp.title": "Plus d'inventaire via le profil de courtier eXp Québec de Jiajia.",
+    "exp.copy":
+      "Le profil eXp Québec de Jiajia présente Yu Jiajia Immobilier Inc., son profil de courtier résidentiel et commercial, ainsi que le fil d'inscriptions de l'agence. Ouvrez la page source eXp pour l'inventaire et la disponibilité les plus récents.",
+    "exp.viewProfile": "Voir le profil eXp et les inscriptions",
+    "exp.viewListing": "Voir sur eXp Québec",
     "services.eyebrow": "Services",
     "services.title": "Accompagnement pour acheteurs, vendeurs et investisseurs.",
     "services.buyers.title": "Représentation d’acheteurs",
@@ -220,7 +358,7 @@ const translations = {
     "footer.tagline": "Courtier immobilier résidentiel et commercial · Grand Montréal",
   },
   zh: {
-    "metadata.title": "Jiajia Yu 房地产 | yuajiajiarealestate.ca",
+    "metadata.title": "Jiajia Yu 房地产 | yujiajiarealestate.ca",
     "metadata.description":
       "Jiajia Yu 是服务大蒙特利尔地区的住宅及商业地产经纪，服务范围包括蒙特利尔、南岸、拉瓦尔及周边地区，可用英语、法语和中文沟通。",
     "brand.role": "房地产经纪",
@@ -246,19 +384,36 @@ const translations = {
     "intro.copy2":
       "无论您是购买第一套房、准备出售、评估商业机会，还是比较投资选择，您都会得到直接沟通和实用计划。",
     "listings.eyebrow": "精选房源",
-    "listings.title": "Jiajia 当前在 eXp Québec 代理的房源。",
+    "listings.title": "精选房源和 eXp Québec 公司房源库存。",
     "listings.copy":
-      "当前房源通过 Centris 链接。房源状态和价格可能会变化，请打开 Centris 查看最新详情。",
+      "先查看 Jiajia 的精选房源链接，再打开他的 eXp Québec 个人资料查看公司完整房源库存。房源状态和价格可能变化，请以源页面的最新信息为准。",
+    "listings.loading": "正在加载最新 eXp Québec 房源...",
+    "listings.error": "当前房源暂时无法加载。请打开 eXp Québec 资料查看最新库存。",
+    "listings.updated": "已从 eXp Québec 自动更新",
     "listing.businessSale": "生意出售",
     "listing.restaurant": "餐厅",
     "listing.commercialSale": "商业楼宇出售",
     "listing.commercialResidential": "商业、住宅",
     "listing.condoSale": "公寓出售",
     "listing.oneBedOneBath": "1 间卧室 · 1 间浴室",
+    "listing.twoBedOneBath": "2 间卧室 · 1 间浴室",
+    "listing.threeBedOneBath": "3 间卧室 · 1 间浴室",
+    "listing.threeBedTwoBath": "3 间卧室 · 2 间浴室",
     "listing.apartmentRent": "公寓出租",
     "listing.houseRent": "共管住宅出租",
     "listing.threeBedThreeBath": "3 间卧室 · 3 间浴室",
+    "listing.expAgency": "eXp 公司房源",
+    "listing.bedroomSingular": "间卧室",
+    "listing.bedroomPlural": "间卧室",
+    "listing.bathroomSingular": "间浴室",
+    "listing.bathroomPlural": "间浴室",
     "listing.view": "在 Centris 查看",
+    "exp.eyebrow": "eXp Québec 公司",
+    "exp.title": "通过 Jiajia 的 eXp Québec 经纪资料查看更多房源。",
+    "exp.copy":
+      "Jiajia 的 eXp Québec 资料显示 Yu Jiajia Immobilier Inc.、住宅及商业地产经纪资料，以及公司房源列表。请打开 eXp 源页面查看最新库存和可售状态。",
+    "exp.viewProfile": "查看 eXp 资料和房源",
+    "exp.viewListing": "在 eXp Québec 查看",
     "services.eyebrow": "服务",
     "services.title": "为买家、卖家和投资者提供支持。",
     "services.buyers.title": "买家代理",
@@ -327,6 +482,8 @@ const translations = {
 };
 
 let activeLanguage = "en";
+let agencyListings = fallbackAgencyListings;
+let agencyListingsGeneratedAt = null;
 
 const getSavedLanguage = () => {
   try {
@@ -345,6 +502,104 @@ const saveLanguage = (language) => {
 };
 
 const t = (key) => translations[activeLanguage]?.[key] || translations.en[key] || key;
+
+const escapeHtml = (value = "") =>
+  String(value).replace(/[&<>"']/g, (character) => {
+    const entities = {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#039;",
+    };
+
+    return entities[character];
+  });
+
+const formatQuantity = (count, singularKey, pluralKey) => {
+  if (!Number.isFinite(count)) return "";
+  const label = count === 1 ? t(singularKey) : t(pluralKey);
+  return activeLanguage === "zh" ? `${count} ${label}` : `${count} ${label}`;
+};
+
+const formatListingSpecs = (listing) =>
+  [
+    formatQuantity(listing.beds, "listing.bedroomSingular", "listing.bedroomPlural"),
+    formatQuantity(listing.bathrooms, "listing.bathroomSingular", "listing.bathroomPlural"),
+  ]
+    .filter(Boolean)
+    .join(" · ");
+
+const formatGeneratedDate = (value) => {
+  if (!value) return "";
+  const locale = activeLanguage === "zh" ? "zh-Hans-CA" : activeLanguage === "fr" ? "fr-CA" : "en-CA";
+  return new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(new Date(value));
+};
+
+const renderListingsUpdated = () => {
+  if (!listingsUpdated) return;
+  const date = formatGeneratedDate(agencyListingsGeneratedAt);
+  listingsUpdated.textContent = date ? `${t("listings.updated")} · ${date}` : "";
+};
+
+const renderAgencyListings = () => {
+  if (!agencyListingsContainer) return;
+
+  if (!agencyListings.length) {
+    agencyListingsContainer.innerHTML = `<p class="listing-status">${escapeHtml(t("listings.error"))}</p>`;
+    agencyListingsContainer.setAttribute("aria-busy", "false");
+    renderListingsUpdated();
+    return;
+  }
+
+  agencyListingsContainer.innerHTML = agencyListings
+    .slice(0, 9)
+    .map(
+      (listing) => `
+        <article class="listing-card agency-listing-card">
+          <img src="${escapeHtml(listing.image)}" alt="${escapeHtml(`eXp Québec listing at ${listing.address}`)}" loading="lazy" decoding="async" />
+          <div class="listing-card-body">
+            <div class="listing-meta">
+              <span>${escapeHtml(t("listing.expAgency"))}</span>
+              <strong>${escapeHtml(listing.price)}</strong>
+            </div>
+            <h3>${escapeHtml(listing.address)}</h3>
+            <p>${escapeHtml(listing.location)}</p>
+            <p class="listing-specs">${escapeHtml(formatListingSpecs(listing))}</p>
+            <a class="listing-link" href="${escapeHtml(listing.url)}" target="_blank" rel="noopener">
+              ${escapeHtml(t("exp.viewListing"))}
+            </a>
+          </div>
+        </article>
+      `,
+    )
+    .join("");
+
+  agencyListingsContainer.setAttribute("aria-busy", "false");
+  renderListingsUpdated();
+};
+
+const loadAgencyListings = async () => {
+  if (!agencyListingsContainer) return;
+
+  agencyListingsContainer.setAttribute("aria-busy", "true");
+
+  try {
+    const response = await fetch(`listings.json?v=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`Listings request failed: ${response.status}`);
+    const data = await response.json();
+    if (!Array.isArray(data.listings) || data.listings.length === 0) {
+      throw new Error("Listings JSON is empty.");
+    }
+
+    agencyListings = data.listings.slice(0, 9);
+    agencyListingsGeneratedAt = data.generatedAt || null;
+  } catch (error) {
+    console.warn(error);
+  }
+
+  renderAgencyListings();
+};
 
 const applyLanguage = (language) => {
   activeLanguage = translations[language] ? language : "en";
@@ -371,6 +626,7 @@ const applyLanguage = (language) => {
     button.setAttribute("aria-pressed", String(isActive));
   });
 
+  renderAgencyListings();
   saveLanguage(activeLanguage);
 };
 
@@ -385,6 +641,7 @@ languageButtons.forEach((button) => {
 });
 
 applyLanguage(getSavedLanguage() || "en");
+loadAgencyListings();
 
 const updateHeader = () => {
   if (!header) return;
