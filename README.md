@@ -10,7 +10,7 @@ This is a standalone static website for `yujiajiarealestate.ca`. It does not dep
 4. Add custom domain: `yujiajiarealestate.ca`.
 5. Netlify will show DNS records.
 6. Copy those records into the DNS settings where you bought the domain.
-7. In Netlify, set `yujiajiarealestate.ca` as the primary domain. Add `www.yujiajiarealestate.ca` only if you want the www version too.
+7. In Netlify, set `yujiajiarealestate.ca` as the primary domain. Keep `www.yujiajiarealestate.ca` connected too if you want www to redirect to the root domain.
 
 ## GitHub Pages Option
 
@@ -20,7 +20,15 @@ This folder includes a `CNAME` file with:
 yujiajiarealestate.ca
 ```
 
-Upload these files to a GitHub repository named `yujiajiarealestate.ca` or `yujiajiarealestate`, enable GitHub Pages, then point your domain DNS to GitHub Pages.
+Upload these files to your GitHub Pages repository, set the custom domain to `yujiajiarealestate.ca`, then point your domain DNS to GitHub Pages.
+
+## Automatic Listing Updates
+
+The site includes `listings.json`, `scripts/update-listings.mjs`, and a GitHub Actions workflow at `.github/workflows/update-listings.yml`.
+
+- The website displays the first 9 eXp Québec listings from `listings.json`.
+- GitHub Actions runs once per day and can also be run manually from **Actions > Update eXp Listings > Run workflow**.
+- When the eXp profile page has new listings, the workflow updates `listings.json`, commits the change, and GitHub Pages republishes the site.
 
 ## Contact Form
 
