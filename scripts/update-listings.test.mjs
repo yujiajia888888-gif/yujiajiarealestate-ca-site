@@ -1,7 +1,10 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import fs from "node:fs/promises";
+import os from "node:os";
+import path from "node:path";
 
-import { extractListings } from "./update-listings.mjs";
+import { extractListings, updateListingsFile } from "./update-listings.mjs";
 
 const sampleBrokerHtml = `
 <div class="mw-properties-container">
@@ -87,3 +90,22 @@ test("extractListings returns normalized eXp listing cards up to the requested l
   ]);
 });
 
+test("updateListingsFile keeps the existing file unchanged when listings did not change", async () => {
+  const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), "listings-update-"));
+  const input = path.join(tempDir, "broker.html");
+  const output = path.join(tempDir, "listings.json");
+  const existingPayload = {
+    generatedAt: "2026-06-01T00:00:00.000Z",
+    sourceUrl: "https://expquebec.com/en/brokers/jiajia-yu/",
+    limit: 1,
+    listings: extractListings(sampleBrokerHtml, { limit: 1 }),
+  };
+  const existingJson = `${JSON.stringify(existingPayload, null, 2)}\n`;
+
+  await fs.writeFile(input, sampleBrokerHtml);
+  await fs.writeFile(output, existingJson);
+
+  await updateListingsFile({ input, output, limit: 1 });
+
+  assert.equal(await fs.readFile(output, "utf8"), existingJson);
+});
