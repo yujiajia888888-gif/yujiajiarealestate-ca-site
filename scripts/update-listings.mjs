@@ -4,7 +4,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 export const SOURCE_URL = "https://expquebec.com/en/brokers/jiajia-yu/";
-export const DEFAULT_LIMIT = 6;
+export const DEFAULT_LIMIT = null;
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const defaultOutputPath = path.resolve(scriptDir, "..", "listings.json");
@@ -52,6 +52,7 @@ export function extractListings(html, { limit = DEFAULT_LIMIT, sourceUrl = SOURC
   const cardRegex = /<a\s+href=["']([^"']*\/en\/properties\/mls\/(\d+)[^"']*)["'][^>]*>([\s\S]*?)<\/a>\s*<\/div>/gi;
   const listings = [];
   const seen = new Set();
+  const maxListings = Number.isFinite(limit) && limit > 0 ? limit : null;
 
   for (const match of html.matchAll(cardRegex)) {
     const [, href, id, cardHtml] = match;
@@ -83,7 +84,7 @@ export function extractListings(html, { limit = DEFAULT_LIMIT, sourceUrl = SOURC
       url: absoluteUrl(href, sourceUrl),
     });
 
-    if (listings.length >= limit) break;
+    if (maxListings && listings.length >= maxListings) break;
   }
 
   return listings;
@@ -175,12 +176,18 @@ export async function updateListingsFile({
   return { ...payload, unchanged: false };
 }
 
+const parseLimit = (value) => {
+  if (value.toLowerCase() === "all") return null;
+  const parsed = Number.parseInt(value, 10);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : null;
+};
+
 const parseArgs = (argv) =>
   argv.reduce(
     (options, arg) => {
       if (arg.startsWith("--input=")) options.input = arg.slice("--input=".length);
       if (arg.startsWith("--output=")) options.output = arg.slice("--output=".length);
-      if (arg.startsWith("--limit=")) options.limit = Number.parseInt(arg.slice("--limit=".length), 10);
+      if (arg.startsWith("--limit=")) options.limit = parseLimit(arg.slice("--limit=".length));
       if (arg.startsWith("--source=")) options.sourceUrl = arg.slice("--source=".length);
       return options;
     },
