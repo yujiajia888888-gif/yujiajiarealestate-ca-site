@@ -4,7 +4,7 @@ import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 
-import { extractListings, updateListingsFile } from "./update-listings.mjs";
+import { DEFAULT_LIMIT, extractListings, updateListingsFile } from "./update-listings.mjs";
 
 const sampleBrokerHtml = `
 <div class="mw-properties-container">
@@ -70,6 +70,10 @@ const sampleBrokerHtml = `
   </div>
 </div>
 `;
+
+test("DEFAULT_LIMIT keeps the website preview to six eXp listings", () => {
+  assert.equal(DEFAULT_LIMIT, 6);
+});
 
 test("extractListings returns normalized eXp listing cards up to the requested limit", () => {
   const listings = extractListings(sampleBrokerHtml, { limit: 1 });
