@@ -494,6 +494,19 @@ section[id] {
   font-weight: 800;
 }
 
+.agency-listings-footer {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.agency-listings-footer .listings-updated {
+  grid-column: auto;
+}
+
 .agency-listing-card .listing-card-body {
   padding: 18px;
 }
@@ -850,6 +863,10 @@ section.contact-section {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .agency-listings-footer {
+    grid-column: 1;
+  }
+
   .listings-updated {
     grid-column: 1;
   }
@@ -926,6 +943,11 @@ section.contact-section {
 
   .agency-preview-grid {
     grid-template-columns: 1fr;
+  }
+
+  .agency-listings-footer .button {
+    justify-content: center;
+    width: 100%;
   }
 
   .area-list article {
