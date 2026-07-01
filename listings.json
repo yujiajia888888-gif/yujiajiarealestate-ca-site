@@ -1,73 +1,73 @@
 {
-  "generatedAt": "2026-06-30T15:50:19.844Z",
+  "generatedAt": "2026-07-01T19:15:11.223Z",
   "sourceUrl": "https://expquebec.com/en/brokers/jiajia-yu/",
   "limit": 6,
   "listings": [
     {
-      "id": "17932864",
-      "status": "For Sale",
-      "price": "$390,000",
-      "address": "2923 Rue des Galets",
-      "location": "Carignan, Montérégie",
-      "beds": 2,
-      "bathrooms": 1,
-      "image": "https://realestate.marketingwebsites.ca/property-images/17932864/17932864-01.jpg",
-      "url": "https://expquebec.com/en/properties/mls/17932864"
-    },
-    {
-      "id": "27678671",
-      "status": "For Sale",
-      "price": "$635,000",
-      "address": "882 Rue de la Falaise",
-      "location": "Pincourt, Montérégie",
-      "beds": 3,
-      "bathrooms": 2,
-      "image": "https://realestate.marketingwebsites.ca/property-images/27678671/27678671-01.jpg",
-      "url": "https://expquebec.com/en/properties/mls/27678671"
-    },
-    {
-      "id": "19644170",
-      "status": "For Sale",
-      "price": "$449,900",
-      "address": "#11 270 Boul. d'Europe",
-      "location": "Aylmer, Outaouais",
-      "beds": 3,
-      "bathrooms": 1,
-      "image": "https://realestate.marketingwebsites.ca/property-images/19644170/19644170-01.jpg",
-      "url": "https://expquebec.com/en/properties/mls/19644170"
-    },
-    {
-      "id": "15996073",
-      "status": "For Sale",
-      "price": "$349,000",
-      "address": "1180 Rue Blanchard",
-      "location": "Fleurimont, Estrie",
-      "beds": 4,
-      "bathrooms": 2,
-      "image": "https://realestate.marketingwebsites.ca/property-images/15996073/15996073-01.jpg",
-      "url": "https://expquebec.com/en/properties/mls/15996073"
-    },
-    {
-      "id": "26078835",
-      "status": "For Sale",
-      "price": "$585,000",
-      "address": "640 Rue Ste-Julie",
-      "location": "Brompton/Rock Forest/Saint-Élie/Deauville, Estrie",
-      "beds": 4,
-      "bathrooms": 2,
-      "image": "https://realestate.marketingwebsites.ca/property-images/26078835/26078835-01.jpg",
-      "url": "https://expquebec.com/en/properties/mls/26078835"
-    },
-    {
-      "id": "25447426",
-      "status": "For Sale",
-      "price": "$849,000",
-      "address": "#2802 1188 Av. Union",
+      "id": "15606293",
+      "status": "For Lease",
+      "price": "$1,450/M",
+      "address": "#761 98 Rue Charlotte",
       "location": "Ville-Marie, Montréal",
-      "beds": 2,
-      "bathrooms": 2,
-      "image": "https://realestate.marketingwebsites.ca/property-images/25447426/25447426-01.jpg",
-      "url": "https://expquebec.com/en/properties/mls/25447426"
+      "beds": 1,
+      "bathrooms": 1,
+      "image": "https://realestate.marketingwebsites.ca/property-images/15606293/15606293-01.jpg",
+      "url": "https://expquebec.com/en/properties/mls/15606293"
+    },
+    {
+      "id": "16635321",
+      "status": "For Lease",
+      "price": "$2,100/M",
+      "address": "#201 2235 Route 133",
+      "location": "Saint-Jean-sur-Richelieu, Montérégie",
+      "beds": 3,
+      "bathrooms": 1,
+      "image": "https://realestate.marketingwebsites.ca/property-images/16635321/16635321-01.jpg",
+      "url": "https://expquebec.com/en/properties/mls/16635321"
+    },
+    {
+      "id": "28515632",
+      "status": "For Lease",
+      "price": "$1,900/M",
+      "address": "#202 2235 Route 133",
+      "location": "Saint-Jean-sur-Richelieu, Montérégie",
+      "beds": 3,
+      "bathrooms": 1,
+      "image": "https://realestate.marketingwebsites.ca/property-images/28515632/28515632-01.jpg",
+      "url": "https://expquebec.com/en/properties/mls/28515632"
+    },
+    {
+      "id": "26923064",
+      "status": "For Sale",
+      "price": "$309,000",
+      "address": "#304 110 Av. du Golf",
+      "location": "La Prairie, Montérégie",
+      "beds": 1,
+      "bathrooms": 1,
+      "image": "https://realestate.marketingwebsites.ca/property-images/26923064/26923064-01.jpg",
+      "url": "https://expquebec.com/en/properties/mls/26923064"
+    },
+    {
+      "id": "24566260",
+      "status": "For Sale",
+      "price": "$1,199,000",
+      "address": "8630 Rue Sherbrooke E.",
+      "location": "Mercier/Hochelaga-Maisonneuve, Montréal",
+      "beds": 0,
+      "bathrooms": 0,
+      "image": "https://realestate.marketingwebsites.ca/property-images/24566260/24566260-01.jpg",
+      "url": "https://expquebec.com/en/properties/mls/24566260"
+    },
+    {
+      "id": "16451247",
+      "status": "For Sale",
+      "price": "$98,000",
+      "address": "8630 Rue Sherbrooke E.",
+      "location": "Mercier/Hochelaga-Maisonneuve, Montréal",
+      "beds": 0,
+      "bathrooms": 0,
+      "image": "https://realestate.marketingwebsites.ca/property-images/16451247/16451247-01.jpg",
+      "url": "https://expquebec.com/en/properties/mls/16451247"
     }
   ]
 }
