@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-01T19:15:11.223Z",
+  "generatedAt": "2026-07-01T22:52:20.049Z",
   "sourceUrl": "https://expquebec.com/en/brokers/jiajia-yu/",
-  "limit": 6,
+  "limit": null,
   "listings": [
     {
       "id": "15606293",
@@ -68,6 +68,28 @@
       "bathrooms": 0,
       "image": "https://realestate.marketingwebsites.ca/property-images/16451247/16451247-01.jpg",
       "url": "https://expquebec.com/en/properties/mls/16451247"
+    },
+    {
+      "id": "15377722",
+      "status": "For Sale",
+      "price": "$460,000",
+      "address": "#1628 1518 Rue Sherbrooke O.",
+      "location": "Ville-Marie, Montréal",
+      "beds": 1,
+      "bathrooms": 1,
+      "image": "https://realestate.marketingwebsites.ca/property-images/15377722/15377722-01.jpg",
+      "url": "https://expquebec.com/en/properties/mls/15377722"
+    },
+    {
+      "id": "18454919",
+      "status": "For Lease",
+      "price": "$1,550/M",
+      "address": "#1628 1518 Rue Sherbrooke O.",
+      "location": "Ville-Marie, Montréal",
+      "beds": 1,
+      "bathrooms": 1,
+      "image": "https://realestate.marketingwebsites.ca/property-images/18454919/18454919-01.jpg",
+      "url": "https://expquebec.com/en/properties/mls/18454919"
     }
   ]
 }
