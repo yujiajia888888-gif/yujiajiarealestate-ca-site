@@ -1,8 +1,30 @@
 {
-  "generatedAt": "2026-07-01T22:52:20.049Z",
+  "generatedAt": "2026-07-02T18:19:28.184Z",
   "sourceUrl": "https://expquebec.com/en/brokers/jiajia-yu/",
   "limit": null,
   "listings": [
+    {
+      "id": "26923064",
+      "status": "For Sale",
+      "price": "$309,000",
+      "address": "#304 110 Av. du Golf",
+      "location": "La Prairie, Montérégie",
+      "beds": 1,
+      "bathrooms": 1,
+      "image": "https://realestate.marketingwebsites.ca/property-images/26923064/26923064-01.jpg",
+      "url": "https://expquebec.com/en/properties/mls/26923064"
+    },
+    {
+      "id": "28515632",
+      "status": "For Lease",
+      "price": "$1,900/M",
+      "address": "#202 2235 Route 133",
+      "location": "Saint-Jean-sur-Richelieu, Montérégie",
+      "beds": 3,
+      "bathrooms": 1,
+      "image": "https://realestate.marketingwebsites.ca/property-images/28515632/28515632-01.jpg",
+      "url": "https://expquebec.com/en/properties/mls/28515632"
+    },
     {
       "id": "15606293",
       "status": "For Lease",
@@ -24,28 +46,6 @@
       "bathrooms": 1,
       "image": "https://realestate.marketingwebsites.ca/property-images/16635321/16635321-01.jpg",
       "url": "https://expquebec.com/en/properties/mls/16635321"
-    },
-    {
-      "id": "28515632",
-      "status": "For Lease",
-      "price": "$1,900/M",
-      "address": "#202 2235 Route 133",
-      "location": "Saint-Jean-sur-Richelieu, Montérégie",
-      "beds": 3,
-      "bathrooms": 1,
-      "image": "https://realestate.marketingwebsites.ca/property-images/28515632/28515632-01.jpg",
-      "url": "https://expquebec.com/en/properties/mls/28515632"
-    },
-    {
-      "id": "26923064",
-      "status": "For Sale",
-      "price": "$309,000",
-      "address": "#304 110 Av. du Golf",
-      "location": "La Prairie, Montérégie",
-      "beds": 1,
-      "bathrooms": 1,
-      "image": "https://realestate.marketingwebsites.ca/property-images/26923064/26923064-01.jpg",
-      "url": "https://expquebec.com/en/properties/mls/26923064"
     },
     {
       "id": "24566260",
